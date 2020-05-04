@@ -12,6 +12,7 @@ const config = {
     appId: "1:423401632004:web:a74e32bb0833e9b88e2051",
     measurementId: "G-MY0RMCEY45"
 };
+
 // CRIAR UM USUÁRIO
 export const createUserProfile = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -69,9 +70,8 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // for google auth
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
 export default firebase;
 
