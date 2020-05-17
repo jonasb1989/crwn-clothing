@@ -26,3 +26,4 @@ yarn-error.log*
 # My Own Files
 
 /client/src/keys.js
+/client/node_modules
